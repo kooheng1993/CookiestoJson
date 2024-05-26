@@ -28,6 +28,21 @@ function convertToJSON(inputId, outputId, copyButtonId) {
 function copyToClipboard(outputId) {
     const output = document.getElementById(outputId).textContent;
     navigator.clipboard.writeText(output).then(() => {
-        alert('Copied to clipboard!');
+        showNotification('Copied to clipboard!');
     });
+}
+
+function showNotification(message) {
+    const container = document.getElementById('notification-container');
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerText = message;
+    container.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.opacity = 0;
+        setTimeout(() => {
+            notification.remove();
+        }, 1000); // 与CSS中transition的时间匹配
+    }, 3000);
 }
