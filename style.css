@@ -60,6 +60,12 @@ textarea {
     box-sizing: border-box;
 }
 
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
 button {
     padding: 10px 20px;
     background-color: #3498db;
@@ -69,11 +75,18 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 16px;
-    margin-bottom: 10px;
 }
 
 button:hover {
     background-color: #2980b9;
+}
+
+button.clear-button {
+    background-color: #e74c3c;
+}
+
+button.clear-button:hover {
+    background-color: #c0392b;
 }
 
 pre {
