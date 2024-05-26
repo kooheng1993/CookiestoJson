@@ -46,3 +46,9 @@ function showNotification(message) {
         }, 1000); // 与CSS中transition的时间匹配
     }, 3000);
 }
+
+function clearContent(inputId, outputId, copyButtonId) {
+    document.getElementById(inputId).value = '';
+    document.getElementById(outputId).textContent = '';
+    document.getElementById(copyButtonId).style.display = 'none';
+}
