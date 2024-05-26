@@ -9,9 +9,20 @@
 <body>
     <div class="container">
         <h1>Convert to JSON</h1>
-        <textarea id="input" placeholder="Enter content here..."></textarea>
-        <button onclick="convertToJSON()">Convert</button>
-        <pre id="output"></pre>
+        <div class="row">
+            <div class="converter">
+                <textarea id="input1" placeholder="Enter content here..."></textarea>
+                <button onclick="convertToJSON('input1', 'output1', 'copyButton1')">Convert</button>
+                <pre id="output1"></pre>
+                <button id="copyButton1" onclick="copyToClipboard('output1')" style="display: none;">Copy to Clipboard</button>
+            </div>
+            <div class="converter">
+                <textarea id="input2" placeholder="Enter content here..."></textarea>
+                <button onclick="convertToJSON('input2', 'output2', 'copyButton2')">Convert</button>
+                <pre id="output2"></pre>
+                <button id="copyButton2" onclick="copyToClipboard('output2')" style="display: none;">Copy to Clipboard</button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
