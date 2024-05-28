@@ -5,16 +5,13 @@ function convertToJSON(inputId, outputId, copyButtonId) {
     const result = lines.map(line => {
         const parts = line.split(/\s+/);
         return {
-            path: parts[3],
-            session: parts[4] === 'Session' ? true : false,
-            domain: parts[2],
-            sameSite: parts[8] || '',
             name: parts[0],
-            httpOnly: parts[6] === '✓',
-            id: parts[5],
-            secure: parts[7] === '✓',
-            storeId: parts[9],
-            value: parts[1]
+            value: parts[1],
+            domain: parts[2],
+            path: parts[3],
+            expiry: new Date(parts[4]).getTime() / 1000, // 转换成timestamp
+            httpOnly: parts[5] === '✓',
+            secure: parts[6] === '✓'
         };
     });
 
