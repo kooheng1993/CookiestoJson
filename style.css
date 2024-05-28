@@ -45,6 +45,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    width: 45%; /* 固定宽度 */
 }
 
 textarea {
