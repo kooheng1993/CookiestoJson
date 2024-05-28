@@ -1,6 +1,14 @@
 // script.js
 function convertToJSON(inputId, outputId, copyButtonId) {
-    const input = document.getElementById(inputId).value;
+    const inputElement = document.getElementById(inputId);
+    let input = inputElement.value;
+
+    // 移除开头和结尾的引号
+    if (input.startsWith('"') && input.endsWith('"')) {
+        input = input.slice(1, -1);
+        inputElement.value = input;  // 更新输入框内容
+    }
+
     const lines = input.split('\n').filter(line => line.trim() !== '');
     const result = lines.map(line => {
         const parts = line.split(/\s+/);
